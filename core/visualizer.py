@@ -57,6 +57,8 @@ class CatanVisualizer:
         fig = plt.gcf()
         ax = plt.gca()
 
+        plt.subplots_adjust(left=0.05, right=0.95, top=0.80, bottom=0.05)
+
         ax.set_aspect('equal')
         ax.axis('off')
 
@@ -125,11 +127,11 @@ class CatanVisualizer:
                         zorder=3
                     )
 
-        self._draw_player_info(ax)
+        self._draw_player_info(fig)
 
         plt.pause(0.001)
 
-    def _draw_player_info(self, ax):
+    def _draw_player_info(self, fig):
         p1 = self.game.players[1]
         p2 = self.game.players[2]
 
@@ -143,15 +145,14 @@ class CatanVisualizer:
             f"   {res2}"
         )
 
-        ax.text(
+        fig.text(
             0.02, 0.98,
             info_text,
-            transform=ax.transAxes,
-            fontsize=9,
+            fontsize=10,
             va='top',
             ha='left',
             family='monospace',
-            bbox=dict(boxstyle="round", fc="white", alpha=0.9)
+            bbox=dict(boxstyle="round", fc="white", alpha=0.9, ec="black")
         )
 
     def show_final(self):

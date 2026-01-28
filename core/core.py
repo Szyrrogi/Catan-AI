@@ -1,6 +1,3 @@
-"""
-Wizualizacja planszy Catan za pomocą matplotlib
-"""
 import math
 import matplotlib.pyplot as plt
 from matplotlib.patches import RegularPolygon

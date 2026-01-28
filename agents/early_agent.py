@@ -57,7 +57,7 @@ def encode_vertex(game, vertex_id):
         has_wood_brick,
         has_wheat_ore,
         is_on_edge,
-        1, 0, 0              
+                     
     ]
 
     return np.array(state, dtype=np.float32)
